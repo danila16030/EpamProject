@@ -15,6 +15,7 @@ public class ChangeFileAboutUsers {
                 text=user.getName()+" "+user.getAmountOfMoney()+'\n';
                 writer.write(text);
             }
+            writer.close();
             writer.flush();// финализирует выходное состояние, очищая все буферы вывода
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

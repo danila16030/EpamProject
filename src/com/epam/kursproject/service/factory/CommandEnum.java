@@ -9,7 +9,7 @@ import com.epam.kursproject.service.impl.LoginCommand;
 public enum CommandEnum {
     LOGIN(new LoginCommand()),
     BALANCECHANGE(new ChangeMoneyCommand()),
-    ADDUSER(new AddUserCommand()),
+    ADDUSSER(new AddUserCommand()),
     DELETEUSER(new DeleteUserCommand());
 
     private Command command;

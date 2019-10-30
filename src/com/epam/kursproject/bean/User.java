@@ -34,14 +34,22 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if(o == null) return false;
+        if (getClass() != o.getClass()) return false;
+
         User user = (User) o;
-        return Double.compare(user.amountOfMoney, amountOfMoney) == 0 &&
-                Objects.equals(name, user.name);
+
+        if (Double.compare(user.amountOfMoney, amountOfMoney) != 0) return false;
+        return name != null ? name.equals(user.name) : user.name == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, amountOfMoney);
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        temp = Double.doubleToLongBits(amountOfMoney);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 }

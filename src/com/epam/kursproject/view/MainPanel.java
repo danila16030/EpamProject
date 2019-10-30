@@ -12,6 +12,7 @@ public class MainPanel {
     private static Controller controller;
 
     public static void main(String[] args) {
+
         controller = new Controller();
         entryFlag = false;
         System.out.println(MENU_COMMAND);
@@ -30,6 +31,7 @@ public class MainPanel {
                     if (line.length() > 5) {
                         if (!line.toUpperCase().substring(0, 5).equals("LOGIN")) {
                             System.out.println("you need to log in before doing other actions");
+                            break;
                         }
                     }
                     try {
